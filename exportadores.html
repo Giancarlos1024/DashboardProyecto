@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <div class="slider active">
+      <div class="logoContent">
+        <div class="logo">
+          <i class="bx bxs-pear"></i>
+          <div class="logoName">ProHass</div>
+        </div>
+        <i class="bx bx-menu" id="btnMenu"></i>
+      </div>
+      <ul class="navlist">
+        <li>
+          <a href="dashboard.html">
+            <i class="bx bxs-objects-vertical-bottom"></i>
+            <span class="linkname">TOTALES</span>
+          </a>
+          <span class="tooltipe">TOTALES</span>
+        </li>
+        <li>
+          <a href="exportadores.html">
+            <i class="bx bxs-user"></i>
+            <span class="linkname">EXPORTADORES</span>
+          </a>
+          <span class="tooltipe">EXPORTADORES</span>
+        </li>
+        <li>
+          <a href="destinos.html">
+            <i class="bx bx-map"></i>
+            <span class="linkname">DESTINOS</span>
+          </a>
+          <span class="tooltipe">DESTINOS</span>
+        </li>
+        <li>
+          <a href="comparativo.html">
+            <i class="bx bxs-buildings"></i>
+            <span class="linkname">COMPARATIVO</span>
+          </a>
+          <span class="tooltipe">COMPARATIVO</span>
+        </li>
+        <li>
+          <a href="arribos.html">
+            <i class="bx bx-cog"></i>
+            <span class="linkname">ARRIBOS</span>
+          </a>
+          <span class="tooltipe">ARRIBOS</span>
+        </li>
+        <li>
+          <a href="hectareas.html">
+            <i class="bx bx-coin-stack"></i>
+            <span class="linkname">HECTÁREAS</span>
+          </a>
+          <span class="tooltipe">HECTÁREAS</span>
+        </li>
+      </ul>
+      <div class="profileContent">
+        <div class="profile">
+          <div class="profileDetalls">
+            <img src="perfil.jpg" alt="" />
+            <div class="datos">
+              <span class="name">Usuario</span>
+              <span class="job">Web Master</span>
+            </div>
+          </div>
+          <i class="bx bx-exit" id="logOut"></i>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="cuerpo">
+        <iframe title="Dashboard Página Web ProHass - 2024 - semana 43 (Exportadores 2024)" src="https://app.powerbi.com/view?r=eyJrIjoiNjA2NDI4NTktNTQyOC00ZGZhLWFiYzEtMDNhYTBiMzZiOTRmIiwidCI6ImI1NDE5OWZmLTQwN2UtNDZlZC1iMmVkLTExZTMyMGYwNDNiNSJ9" frameborder="0" allowFullScreen="true"> 
+        </iframe>
+      </div>
+    </div>
+
+    <script>
+      const $slider = document.querySelector(".slider");
+      const $btnMenu = document.querySelector("#btnMenu");
+      $btnMenu.addEventListener("click",() =>{
+        $slider.classList.toggle("active")
+      })
+    </script>
+  </body>
+</html>

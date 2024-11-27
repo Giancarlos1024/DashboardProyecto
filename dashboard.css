@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: bisque;
+}
+
+.slider {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    padding: 6px 14px;
+    background-color: #1C7705;
+    z-index: 1000;
+}
+.slider.active {
+    width: 240px;
+}
+.slider .logoContent .logo {
+    color: white;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+}
+.slider.active .logoContent .logo {
+    opacity: 1;
+}
+.logo {
+    font-size: 2.5rem;
+}
+.logoName {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.slider #btnMenu {
+    position: absolute;
+    color: white;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 6px;
+    font-size: 1.8rem;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+}
+.slider.active #btnMenu {
+    left: 90%;
+}
+.slider .navlist {
+    margin-top: 20px;
+}
+.navlist li {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 0 5px;
+    list-style: none;
+    line-height: 50px;
+}
+.navlist li a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 10px;
+    text-align: center;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+.navlist li a:hover {
+    background-color: #fff;
+    color: #1C7705;
+}
+.slider .navlist i {
+    text-align: center;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 10px;
+    line-height: 50px;
+    font-size: 2.2rem;
+}
+.slider .linkname {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.slider.active .linkname {
+    opacity: 1;
+    pointer-events: auto;
+}
+.slider .navlist .tooltipe {
+    position: absolute;
+    left: 120px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    height: 35px;
+    width: 120px;
+    background-color: #fff;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 5px 5px black;
+    transition: 0s;
+    pointer-events: none;
+    display: block;
+    opacity: 0;
+}
+.slider.active .navlist .tooltipe {
+    display: none;
+}
+.slider .navlist li:hover .tooltipe {
+    opacity: 1;
+    transition: all 0.5s ease;
+    top: 40%;
+}
+.slider .profileContent {
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.profile .profileDetalls img {
+    height: 55px;
+    width: 55px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.slider .profileContent .profile {
+    position: relative;
+    padding: 10px 6px;
+    height: 80px;
+    background-color: none;
+    transition: all 0.5s ease;
+}
+.slider.active .profile {
+    background-color: green;
+}
+.profileContent .profileDetalls {
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    white-space: nowrap;
+    opacity: 0;
+}
+.slider.active .profileContent .profileDetalls {
+    opacity: 1;
+    pointer-events: auto;
+}
+.profile .datos {
+    margin-left: 10px;
+}
+.profile .datos .name {
+    font-size: 2rem;
+    display: block;
+}
+.profile #logOut {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 70px;
+    font-size: 2.5rem;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.slider.active .profile #logOut {
+    left: 90%;
+}
+.content {
+    position: absolute;
+    height: 100%;
+    left: 78px;
+    background-color: #DCFA99;
+    width: calc(100% - 78px);
+    overflow-y: scroll;
+}
+.slider.active ~ .content {
+    left: 240px;
+    width: calc(100% - 240px);
+}
+.cuerpo {
+    padding: 20px; 
+}
+.cuerpo > iframe{
+    width: 100%;
+    height: 800px;
+}
+/*DISEÑO RESPONSIVO PARA DISPOSITIVOS MOVILES*/
+@media screen and (max-width:480px){
+    .logoName {
+        font-size: 15px;
+        font-weight: 400;
+    }
+    .linkname{
+        font-size: 11px;
+    }
+    .profile .datos .name {
+        font-size: 1rem;
+        display: block;
+    }
+    .profile .profileDetalls img {
+        height: 40px;
+        width: 40px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}
+/*DISEÑO RESPONSIVO PARA DISPOSITIVOS COMO TABLES*/
+@media screen and (min-width:481px) and (max-width:768px){
+    .logoName {
+        font-size: 18px;
+        font-weight: 400;
+    }
+    .linkname{
+        font-size: 13px;
+    }
+    .profile .datos .name {
+        font-size: 20px;
+        display: block;
+    }
+    .profile .profileDetalls img {
+        height: 45px;
+        width: 45px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .content {
+        position: absolute;
+        height: 100%;
+        left: 78px;
+        /* background-color: #ec1d0e; */
+        width: calc(100% - 78px);
+        overflow-y: scroll;
+        /* padding: 5px;
+        margin: 5px; */
+    }
+    .cuerpo {
+        padding: 0px; /* Ajusta el padding si es necesario */
+        /* background-color: aqua; */
+    }
+    .cuerpo > iframe{
+        width: 100%;
+        height: 790px;
+    }
+}
