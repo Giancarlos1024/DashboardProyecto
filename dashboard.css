@@ -16,7 +16,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
+   height: 100vh;
     width: 78px;
     padding: 6px 14px;
     background-color: #1C7705;
@@ -67,7 +67,7 @@ body {
     position: relative;
     height: 50px;
     width: 100%;
-    margin: 0 5px;
+    margin: 0 0px;
     list-style: none;
     line-height: 50px;
 }
@@ -104,12 +104,12 @@ body {
 }
 .slider .navlist .tooltipe {
     position: absolute;
-    left: 120px;
+    left: 145px;
     top: 50%;
     transform: translate(-50%, -50%);
     border-radius: 6px;
     height: 35px;
-    width: 120px;
+    width: 145px;
     background-color: #fff;
     line-height: 35px;
     text-align: center;
@@ -118,6 +118,7 @@ body {
     pointer-events: none;
     display: block;
     opacity: 0;
+    font-size: 15px;
 }
 .slider.active .navlist .tooltipe {
     display: none;
@@ -185,21 +186,22 @@ body {
 .content {
     position: absolute;
     height: 100%;
-    left: 78px;
+    left: 38px;
     background-color: #DCFA99;
-    width: calc(100% - 78px);
+    width: 100%;
     overflow-y: scroll;
 }
 .slider.active ~ .content {
     left: 240px;
-    width: calc(100% - 240px);
+    width: 100%;
 }
 .cuerpo {
-    padding: 20px; 
-}
-.cuerpo > iframe{
     width: 100%;
-    height: 800px;
+    height: 100%;
+}
+.cuerpo > iframe {
+    width: 100%;
+    height: 100%;
 }
 /*DISEÑO RESPONSIVO PARA DISPOSITIVOS MOVILES*/
 @media screen and (max-width:480px){
@@ -220,6 +222,32 @@ body {
         object-fit: cover;
         border-radius: 10px;
     }
+    .slider .navlist i {
+        text-align: center;
+        height: 50px;
+        min-width: 48px;
+        border-radius: 10px;
+        line-height: 50px;
+        font-size: 25px;
+    }
+    .content {
+        position: absolute;
+        height: 100%;
+        left: 56px;
+        background-color: #DCFA99;
+        width: 100%;
+        overflow-y: scroll;
+    }
+    .profile #logOut {
+        font-size: 2rem;
+    }
+    .slider .navlist .tooltipe {
+        font-size: 10px;
+        width: 120px;
+        left:125px;
+        
+    }
+    
 }
 /*DISEÑO RESPONSIVO PARA DISPOSITIVOS COMO TABLES*/
 @media screen and (min-width:481px) and (max-width:768px){
@@ -243,9 +271,8 @@ body {
     .content {
         position: absolute;
         height: 100%;
-        left: 78px;
+        left: 54px;
         /* background-color: #ec1d0e; */
-        width: calc(100% - 78px);
         overflow-y: scroll;
         /* padding: 5px;
         margin: 5px; */
@@ -256,6 +283,6 @@ body {
     }
     .cuerpo > iframe{
         width: 100%;
-        height: 790px;
+        height: 100%;
     }
 }
