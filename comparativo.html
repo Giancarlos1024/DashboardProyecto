@@ -94,13 +94,17 @@
       function cambiarSrcSiEsCelular() {
         const linkAdaptacion = document.getElementById("linkAdaptacion");
         const anchoPantalla = window.innerWidth;
+        const $slider = document.querySelector(".slider");
 
         if (anchoPantalla <= 480) {
           // Si el ancho de la pantalla es menor o igual a 480px, asumimos que es un celular
           linkAdaptacion.src = "https://app.powerbi.com/view?r=eyJrIjoiNTUzNDVjOTktYjM0OS00OWY1LWJiOWItY2JlMTQ3ZWMyMjRjIiwidCI6ImI1NDE5OWZmLTQwN2UtNDZlZC1iMmVkLTExZTMyMGYwNDNiNSJ9";
+          $slider.classList.remove("active");
+        
         }else {
           // De lo contrario, usamos el link para dispositivos más grandes
           linkAdaptacion.src ="https://app.powerbi.com/view?r=eyJrIjoiODVmOWFlZDMtZmJlYy00NTQ0LWI3NTItZTI1ZDFjNDYxNDBjIiwidCI6ImI1NDE5OWZmLTQwN2UtNDZlZC1iMmVkLTExZTMyMGYwNDNiNSJ9";
+          $slider.classList.add("active");
         }
       }
 

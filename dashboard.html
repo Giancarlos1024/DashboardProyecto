@@ -91,19 +91,23 @@
           $slider.classList.toggle("active");
         });
 
-      function cambiarSrcSiEsCelular() {
-        const linkAdaptacion = document.getElementById("linkAdaptacion");
-        const anchoPantalla = window.innerWidth;
+        function cambiarSrcSiEsCelular() {
+          const linkAdaptacion = document.getElementById("linkAdaptacion");
+          const anchoPantalla = window.innerWidth;
+          const $slider = document.querySelector(".slider");
 
-        if (anchoPantalla <= 480) {
-          // Si el ancho de la pantalla es menor o igual a 480px, asumimos que es un celular
-          linkAdaptacion.src = "https://app.powerbi.com/view?r=eyJrIjoiOWFlMTdmOTUtZjcxNC00ZmE5LWFjODMtOTRlMGRmOWU0MzA2IiwidCI6ImI1NDE5OWZmLTQwN2UtNDZlZC1iMmVkLTExZTMyMGYwNDNiNSJ9";
-        } else {
-          // De lo contrario, usamos el link para dispositivos más grandes
-          linkAdaptacion.src = "https://app.powerbi.com/view?r=eyJrIjoiNTM4MmM2MmItNzEwNi00ZGY5LTlmZGYtOWMxNDBmY2RjMWMwIiwidCI6ImI1NDE5OWZmLTQwN2UtNDZlZC1iMmVkLTExZTMyMGYwNDNiNSJ9";
+          if (anchoPantalla <= 480) {
+              // Si el ancho de la pantalla es menor o igual a 480px, asumimos que es un celular
+              linkAdaptacion.src = "https://app.powerbi.com/view?r=eyJrIjoiOWFlMTdmOTUtZjcxNC00ZmE5LWFjODMtOTRlMGRmOWU0MzA2IiwidCI6ImI1NDE5OWZmLTQwN2UtNDZlZC1iMmVkLTExZTMyMGYwNDNiNSJ9";
+              $slider.classList.remove("active");
+
+          } else {
+              // De lo contrario, usamos el link para dispositivos más grandes
+              linkAdaptacion.src = "https://app.powerbi.com/view?r=eyJrIjoiNTM4MmM2MmItNzEwNi00ZGY5LTlmZGYtOWMxNDBmY2RjMWMwIiwidCI6ImI1NDE5OWZmLTQwN2UtNDZlZC1iMmVkLTExZTMyMGYwNDNiNSJ9";
+              $slider.classList.add("active");
+          }
         }
-        
-      }
+
 
       // Ejecutar la función al cargar la página
       window.addEventListener('load', cambiarSrcSiEsCelular);
